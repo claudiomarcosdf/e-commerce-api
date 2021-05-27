@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fabricantes",
+  "info": {
+    "name": "fabricante",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nome",
+      "required": true
+    },
+    "produtos": {
+      "via": "fabricante",
+      "collection": "produto"
+    }
+  }
+}

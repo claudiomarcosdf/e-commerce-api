@@ -1,0 +1,109 @@
+{
+  "kind": "collectionType",
+  "collectionName": "produtos",
+  "info": {
+    "name": "produto",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "referencia": {
+      "type": "string"
+    },
+    "preco": {
+      "type": "decimal"
+    },
+    "descricao": {
+      "type": "richtext",
+      "required": true
+    },
+    "ano_fabricacao": {
+      "type": "string",
+      "maxLength": 4,
+      "minLength": 4
+    },
+    "preco_parcelado": {
+      "type": "decimal"
+    },
+    "peso": {
+      "type": "string"
+    },
+    "especificacao": {
+      "type": "richtext"
+    },
+    "garantia": {
+      "type": "text"
+    },
+    "capa": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "galeria": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nome",
+      "required": true
+    },
+    "categoria": {
+      "model": "categoria",
+      "via": "produtos"
+    },
+    "fabricante": {
+      "model": "fabricante",
+      "via": "produtos"
+    },
+    "departamentos": {
+      "collection": "departamento",
+      "via": "produtos",
+      "dominant": true
+    },
+    "estoques": {
+      "collection": "estoque",
+      "via": "produto"
+    },
+    "geometria": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "genero": {
+      "type": "enumeration",
+      "enum": [
+        "Unissex",
+        "Masculino",
+        "Feminino",
+        "Infantil"
+      ]
+    }
+  }
+}

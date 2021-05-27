@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "estoques",
+  "info": {
+    "name": "estoque"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tamanho": {
+      "type": "string",
+      "required": true
+    },
+    "cor": {
+      "type": "string",
+      "required": true
+    },
+    "quantidade": {
+      "type": "biginteger",
+      "required": true,
+      "min": "0"
+    },
+    "produto": {
+      "via": "estoques",
+      "model": "produto"
+    }
+  }
+}

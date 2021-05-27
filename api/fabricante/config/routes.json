@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/fabricantes",
+      "handler": "fabricante.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/fabricantes/count",
+      "handler": "fabricante.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/fabricantes/:id",
+      "handler": "fabricante.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/fabricantes",
+      "handler": "fabricante.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/fabricantes/:id",
+      "handler": "fabricante.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/fabricantes/:id",
+      "handler": "fabricante.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
